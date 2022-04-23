@@ -2,14 +2,14 @@
   <div class="bg-light">
     <div class="banner position-relative mx-auto w-100 my-auto align-middle text-center" style="padding-top:10rem;">
       <div class="text-center text-light font-titillium-web mb-2" :class="{'display-4':!mobile, 'h1':mobile}">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit
+        В рамках курса ОПД предоставляем вам сервис
       </div>
       <div class="text-center text-light font-weight-bold mx-lg-auto d-inline-block bg-light rounded p-2 mx-3" :class="{'display-4':!mobile, 'h1':mobile}">
-        <p class="rounded mx-auto d-inline-block rta my-0 pb-1 ">Прототип дизайна</p>
+        <p class="rounded mx-auto d-inline-block rta my-0 pb-1 ">DMTA MLITA SOLVER</p>
       </div>
       <div class="scroll-icon">
         <a href="#herramientas">
-          <i class="fas fa-chevron-circle-up fa-2x text-white"></i>
+          <i class="fa fa-chevron-down fa-2x text-white"></i>
         </a>
       </div>
     </div>
@@ -46,7 +46,7 @@
           </div>
         </div>
         <div class="col-12 col-lg-4 mx-auto my-2 pl-lg-1">
-          <img src="/img/fms-3.png" class="img-fluid mx-auto rounded border p-1 bg-white" alt="">
+          <img src="" class="img-fluid mx-auto rounded border p-1 bg-white" alt="">
         </div>
       </div>
     </div>
@@ -106,23 +106,23 @@ export default {
 }
 
 .bg-home{
-  background: #8E2DE2;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #4A00E0, #8E2DE2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #28a745;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #54b686, #28a745);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #54b686, #28a745); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .rta{
   color: white; /* Fallback: assume this color ON TOP of image */
-  background: #8E2DE2;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #4A00E0, #8E2DE2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #28a745;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #54b686, #28a745);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #54b686, #28a745); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .banner{
   height:99vh;
-  background: #8E2DE2;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #4A00E0, #8E2DE2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #28a745;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #54b686, #28a745);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #54b686, #28a745); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
   clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
 }

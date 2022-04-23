@@ -10,7 +10,7 @@
         <b-collapse class="p-0" id="nav-collapse" is-nav v-model="showNav">
             <b-navbar-nav :class="{'mx-auto':$route.name=='Home'}">
                 <b-nav-item :to="{name:'Home'}" :class="{'active':$route.name=='Home'}">о сервисе</b-nav-item>
-                <b-nav-item :to="{name:'Reconocedor'}" :class="{'active':$route.name=='Reconocedor'}">конечные автоматы</b-nav-item>
+                <b-nav-item :to="{name:'stateMachine'}" :class="{'active':$route.name=='stateMachine'}">конечные автоматы</b-nav-item>
                 <b-nav-item :to="{name:'Turing'}" :class="{'active':$route.name=='Turing'}">машины Тьюринга</b-nav-item>
                 <b-nav-item :to="{name:'About'}" :class="{'active':$route.name=='About'}">версии</b-nav-item>
             </b-navbar-nav>

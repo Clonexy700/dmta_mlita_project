@@ -69,17 +69,14 @@
       <h2>вышло</h2>
       <p id="temptape"></p>
     </div>
-
     <button id="run" @click="runOnClick">ран</button>
     <button id="clear" @click="clearOnClick">очистись нахуй</button>
     <button id="step" @click="stepOnClick">шаг один штука показать головка</button>
-    
   </div>
   </body>
 </template>
 <script>
 const charset = ['L','N','R'];
-
 let step_state = 1; // ЕБУЧЕЕ ГОВНО КОТОРОЕ НЕ ЧИТАЕТСЯ ВНАЧАЛЕ СКРИПТА НАДО КАК-ТО ЗАПИХАТЬ В ДАТА ДАННЫЕ VUE ИЛИ КАК-ТО СЧСИТАТЬ ИЗ TURINGMACHINE.JS НИХУЯН Е СЕЙВИТСЯ В ЭТИ ПЕРЕМЕННЫЕ НАХУЙ ААА
 let step_RWH = 0
 let first_step = true;
@@ -161,19 +158,16 @@ export default {
     getInput() {
     tape = tapeinput.value.split("");
     let table = document.getElementById("table_rules");
-
     // reading alphabet from the instruction table
     for (let i = 1; i < table.rows[0].cells.length; i++)
     {
         alphabet.push(table.rows[0].cells[i].getElementsByTagName("input")[0].value);
     }
-
     // reading number of states in use from the instruction table 
     for (let i = 0; i < table.rows.length; i++)
     {
         states.push(i);
     }
-
     // reading instructions from the instruction table 
     for (let i = 1; i < table.rows.length; i++)
     {
@@ -205,7 +199,6 @@ export default {
     checkAlphabet() {
         for (let i = 0; i < alphabet.length; i++)
         {
-
         if (alphabet[i].length > 1)
         {
             console.error(`\'${alphabet[i]}\' is not allowed. You must use only one character.`);
@@ -242,7 +235,6 @@ export default {
                 sym = rules[i][j][0];
                 mov = rules[i][j][1];
                 state = rules[i][j].slice(2);
-
                 // the first symbol in a rule must be declared in alphabet
                 if (alphabet.indexOf(sym) == -1)
                 {
@@ -250,7 +242,6 @@ export default {
                     alert(`Symbol \'${sym}\' is not declared in alphabet.`);
                     return false;
                 }
-
                 // the second symbol in a rule must be L, N or R.
                 else if (charset.indexOf(mov) == -1)
                 {
@@ -258,7 +249,6 @@ export default {
                     alert(`Symbol \'${mov}\' is not allowed. You can use only \'L\', \'N\' or \'R\'.`)
                     return false;
                 }
-
                 // the third symbol must be q
                 else if(state[0] != 'q')
                 {
@@ -266,7 +256,6 @@ export default {
                     alert(`You have to use 'q' before state number.`);
                     return false;
                 }
-
                 //the last symbols must be declared with 'add state' button
                 else if (states.indexOf(Number(state.slice(1))) == -1)
                 {
@@ -283,12 +272,9 @@ export default {
     // Input
     clearInput();
     getInput();
-
-
     // Check input in general
     if (!checkAlphabet() || !checkTape() || !checkRules())
         return false;
-
     //Turing Machine start
     const endless_cycle_limit = 400;  // Endless cycle protection
     let loop = 0;                     // Endless cycle protection
@@ -298,7 +284,6 @@ export default {
     let RWH = 0;
     let mov;
     let newsym;
-
     // that's turing machine
     while(state != 0)
     {
@@ -399,34 +384,6 @@ export default {
 ul{
     list-style-type: disc;
 }
-#tableblock {
-	border: 1px solid lightgrey;
-	border-radius: 8px;
-	height: 350px;
-	max-width: 800px;
-	overflow: auto;
-	margin-bottom: 8px;
-}
-
-#tapeinput {
-	border: 1px solid grey;
-	border-radius: 8px;
-	outline: none;
-	padding: 5px 0 5px 5px;
-	height: 20px;
-}
-
-#tapeinput:hover {
-	background: ghostwhite;
-	transition: 0.3s;
-}
-
-#tapeinput:focus {
-	background: white !important;
-	border: 1px solid black;
-	border-radius: 20px;
-}
-
 #temptape {
 	display: block;
 	max-width: 600px;
@@ -438,6 +395,4 @@ ul{
 	text-indent: 5px;
 	overflow: hidden;
 }
-
-
 </style>

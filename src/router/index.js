@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import Reconocedor from '../views/StateMachine.vue'
+import stateMachine from '../views/StateMachine.vue'
 import About from '../views/About.vue'
 import Turing from '../views/TuringMachine.vue'
 
@@ -20,8 +20,8 @@ const routes = [
   },
   {
     path: '/StateMachine',
-    name: 'Reconocedor',
-    component: Reconocedor
+    name: 'stateMachine',
+    component: stateMachine
   },
   {
     path: '/TuringMachine',
@@ -31,7 +31,7 @@ const routes = [
   {
     path: '/*',
     name: '404',
-    component: Reconocedor
+    component: stateMachine
   },
 ]
 

@@ -15,7 +15,7 @@
           <div class="input-group">
             <input type="text" autocomplete="false" class="form-control text-center rounded-0 border-0" :class="{'font-weight-bold':t.value.length>0}" style="min-width:50px" v-model="t.value" @input="t.value?t.value=t.value:''">
             <div class="bg-white input-group-append mx-auto col-12 col-md-2 px-0">
-              <i class="fas fa-trash clickeable p-2 text-danger border-left w-100 my-auto" @click="deleteTransition(t)"></i>
+              <i class="fa fa-trash clickeable p-2 text-danger border-left w-100 my-auto" @click="deleteTransition(t)"></i>
             </div>
           </div>
         </th>
@@ -23,9 +23,9 @@
       <tr v-for="(s,index) in states" :key="index">
         <th class="border border-dark my-auto align-middle p-0 align-middle p-0" style="min-width:50px" :class="{'text-dark bg-white':!s.end, 'bg-dark text-light':s.end }">
          <div class="row mx-auto my-auto align-middle p-1">
-            <i class="fas fa-trash clickeable p-2 text-danger rounded mx-auto col-12 col-md order-2 border my-1 my-md-0" :class="{'col-md-12':transitions.length>5}" @click="deleteState(s)"></i>
+            <i class="fa fa-trash clickeable p-2 text-danger rounded mx-auto col-12 col-md order-2 border my-1 my-md-0" :class="{'col-md-12':transitions.length>5}" @click="deleteState(s)"></i>
             <p class="py-0 px-2 my-auto col-12 col-md order-1 order-md-2">{{s.value}}</p>
-            <i class="fas fa-flag-checkered clickeable p-2 rounded mx-auto col-12 col-md order-3 border my-1 my-md-0" :class="{'bg-success text-light':s.end, 'col-md-12':transitions.length>5}" @click="s.end=!s.end"></i>
+            <i class="fa fa-flag-checkered clickeable p-2 rounded mx-auto col-12 col-md order-3 border my-1 my-md-0" :class="{'bg-success text-light':s.end, 'col-md-12':transitions.length>5}" @click="s.end=!s.end"></i>
          </div>
         </th>
         <th class="border border-dark p-0" v-for="(t,index) in table[states.indexOf(s)]" :key="index">
@@ -48,14 +48,18 @@
       </div>  
     </div>
     <div class="container my-2 text-center mx-auto">
-      <button class="btn btn-warning rounded-pill d-block mx-auto my-2 font-weight-bold px-4 py-2" @click="showAutomata = !showAutomata">
-        показать автомат
+      <button class="btn btn-outline-success rounded-pill d-block mx-auto my-2 font-weight-bold px-4 py-2" @click="showAutomata = !showAutomata">
+        граф автомата
+<i class="fa fa-file" aria-hidden="true"></i>
+
       </button>
-      <button class="btn btn-secondary rounded-pill d-block mx-auto my-2 font-weight-bold px-4 py-2" @click="showHistory = true">
-          показать сохранённые автоматы
+      <button class="btn btn-outline-success rounded-pill d-block mx-auto my-2 font-weight-bold px-4 py-2" @click="showHistory = true">
+          сохранённые автоматы
+        <i class="fa fa-history" aria-hidden="true"></i>
       </button>
-      <button class="btn btn-info rounded-pill d-block mx-auto my-2 font-weight-bold px-4 py-2" @click="showInstructions = true">
-        показать инструкции
+      <button class="btn btn-outline-success rounded-pill d-block mx-auto my-2 font-weight-bold px-4 py-2" @click="showInstructions = true">
+                показать инструкции 
+        <i class="fa fa-book" aria-hidden="true"></i>
       </button>
     </div>
     <template v-if="table">
@@ -63,16 +67,16 @@
     </template>
     <b-modal centered title="Пользовательская документация" hide-footer v-model="showInstructions">
       <p class="my-1 text-center">Переходы доступны для редактирования, поэтому вы можете создавать автоматы, которые хотите</p>
-      <p class="my-1 text-center"><i class="fas fa-flag-checkered border p-2 rounded"></i> Не конечное состояние <i class="fas fa-flag-checkered border p-2 rounded"></i></p>
-      <p class="my-1 text-center"><i class="fas fa-flag-checkered border p-2 rounded bg-success text-light"></i> Конечное состояние <i class="fas fa-flag-checkered border p-2 rounded bg-success text-light"></i></p>
-      <p class="my-1 text-center"><i class="fas fa-trash border p-2 rounded text-danger"></i> Удалить состояние/переход <i class="fas fa-trash border p-2 rounded text-danger bg-dark"></i></p>
+      <p class="my-1 text-center"><i class="fa fa-flag-checkered border p-2 rounded"></i> Не конечное состояние <i class="fas fa-flag-checkered border p-2 rounded"></i></p>
+      <p class="my-1 text-center"><i class="fa fa-flag-checkered border p-2 rounded bg-success text-light"></i> Конечное состояние <i class="fas fa-flag-checkered border p-2 rounded bg-success text-light"></i></p>
+      <p class="my-1 text-center"><i class="fa fa-trash border p-2 rounded text-danger"></i> Удалить состояние/переход <i class="fas fa-trash border p-2 rounded text-danger bg-dark"></i></p>
     </b-modal>
     <b-modal id="showAutomata" size="lg" centered title="Автомат" class="mx-auto" hide-footer v-model="showAutomata">
       <template  v-if="states.length>0" >
         <Automata :table="table" :states="states" :key="showAutomata" />
         <div class="text-center row mx-auto">
-          <p class="my-1 mx-auto"><i class="fas fa-circle"></i> конечное состояние</p>
-          <p class="my-1 mx-auto"><i class="far fa-circle"></i> не конечное состояние</p>
+          <p class="my-1 mx-auto"><i class="fa fa-circle"></i> конечное состояние</p>
+          <p class="my-1 mx-auto"><i class="fa fa-dot-circle-o" aria-hidden="true"></i> не конечное состояние</p>
         </div>
       </template>
       <p class="my-3 text-center" v-else>Введите таблицу переходов</p>
@@ -126,7 +130,7 @@
 <script>
 import Automata from '@/components/Automata.vue'
 export default {
-  name: 'Reconocedor',
+  name: 'stateMachine',
   components:{Automata},
   props: [],
   data(){
@@ -272,7 +276,7 @@ export default {
       }
     },
     deleteState(state){
-      if(confirm("Deseas eliminar el estado " + state.value + "?")){
+      if(confirm("Вы хотите удалить переход " + state.value + "?")){
         if(this.states.length == 1){
           this.table = [];
           this.states = [];
