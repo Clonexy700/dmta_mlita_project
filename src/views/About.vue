@@ -4,6 +4,18 @@
             <p class="my-2 font-weight-bold h5">Контроль версий</p>
             <div class="container rounded border border-light p-3" style="height:50vh; overflow: auto">
                 <div>
+                    <p class=" font-weight-bold my-0 h5">1.7</p>
+                    <ul>
+                        <li>Дизайн Машин Тьюринга и симуляция ленты</li>
+                    </ul>
+                </div>
+                <div>
+                    <p class=" font-weight-bold my-0 h5">1.6</p>
+                    <ul>
+                        <li>Добавлен модуль Машин Тьюринга</li>
+                    </ul>
+                </div>
+                <div>
                     <p class=" font-weight-bold my-0 h5">1.5</p>
                     <ul>
                         <li>Добавлены автоматы с магазинной памятью</li>
