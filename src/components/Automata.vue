@@ -38,7 +38,7 @@ export default {
             $(go.Shape),
             $(go.Shape, { toArrow: "Standard" }),
             $(go.Panel, "Auto",  // this whole Panel is a link label
-                $(go.Shape, "Ellipse", { fill: "gray", stroke: "gray" }),
+                $(go.Shape, "Square", { fill: "white", stroke: "black" }),
                 $(go.TextBlock, { margin: 0 },
                 new go.Binding("text", "text"))
             )

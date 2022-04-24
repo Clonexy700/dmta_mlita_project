@@ -1,16 +1,11 @@
 <template>
 <body>
   <header>
-    <h1>тьюринг мачин пшш пшш вжж</h1>
+    <h3 class="text-center py-2 mb-3 font-weight-bold">Симулятор Машины Тьюринга</h3>
   </header>
   <hr>
   <div class="app">
     <form action="" onsubmit="return false;">
-        <h2>как сосать пенис правильно <i class="far fa-question-circle" id="tmhelp"></i>  
-        <p id="how-to-use">
-          &ensp; вот так  <br> &ensp; клик клик клак ыы<br> &ensp; вжж бр бр <br> бебра
-        </p>
-        </h2>
 
         <div id="tableblock">
         <table id="table_rules">
@@ -53,25 +48,36 @@
           
         </table>
         </div>
-        <button class="tablebutton" id="asym" @click="addSym">привставить символ</button>
-        <button class="tablebutton" id="rsym" @click="remSym">высунуть символ</button>
-        <button class="tablebutton" id="astate" @click="addState"> присунуть состояние</button>
-        <button class="tablebutton" id="rstate" @click="remState">убрать состояние</button>
-      
+                <div class="row col-12 mx-auto text-center my-3 text-center">
+        <button class="tablebutton btn btn-outline-success rounded-pill d-block mx-auto my-2 font-weight-bold px-4" @click="addSym">
+        +1 символ
+      </button>
+        <button class="tablebutton btn btn-outline-success rounded-pill d-block mx-auto my-2 font-weight-bold px-4" @click="remSym">
+        -1 символ
+      </button>
+        <button class="tablebutton btn btn-outline-success rounded-pill d-block mx-auto my-2 font-weight-bold px-4" @click="addState">
+        +1 состояние
+      </button>
+        <button class="tablebutton btn btn-outline-success rounded-pill d-block mx-auto my-2 font-weight-bold px-4" @click="remState">
+        -1 состояние
+      </button>
+          </div>
       
       <div id="input_tapeblock">
-        <h2>вошло</h2>
+        <h2>Ввод</h2>
         <input type="text" name="tapeinput" id="tapeinput" value="11110111"><label for="tapeinput" accesskey="t"></label>
       </div>
     </form>
 
     <div class="tapeblock">
-      <h2>вышло</h2>
+      <h2>Вывод</h2>
       <p id="temptape"></p>
     </div>
-    <button id="run" @click="runOnClick">ран</button>
-    <button id="clear" @click="clearOnClick">очистись нахуй</button>
-    <button id="step" @click="stepOnClick">шаг один штука показать головка</button>
+        <div class="row col-12 mx-auto text-center my-3 text-center">
+    <button id="run" class="btn col-lg col-12 btn-success my-2 mx-auto m-md-2" @click="runOnClick">запустить</button>
+    <button id="clear" class="btn col-lg col-12 btn-success my-2 mx-auto m-md-2" @click="clearOnClick">очистить</button>
+    <button id="step" class="btn col-lg col-12 btn-success my-2 mx-auto m-md-2" @click="stepOnClick">1 шаг</button>
+    </div>
   </div>
   </body>
 </template>
